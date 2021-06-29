@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
-import { Container, Menu } from 'semantic-ui-react'
-import CandidateSignedOut from './CandidateSignedOut'
-import CandidateSignedIn from './CandidateSignedIn'
-import EmployerSignedOut from './EmployerSignedOut'
-
+import React, { useState } from 'react';
+import { Container, Menu } from 'semantic-ui-react';
+import CandidateSignedOut from './CandidateSignedOut';
+import CandidateSignedIn from './CandidateSignedIn';
 
 export default function Navi() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
+  function handleCandidateSignOut() {
+    setIsAuthenticated(false)
+  }
+
+  function handleCandidateSignIn() {
+    setIsAuthenticated(true)
+  }
 
   return (
     <div>
@@ -27,16 +32,16 @@ export default function Navi() {
 
           />
 
-
           <Menu.Menu position='right'>
 
-            {isAuthenticated ? <CandidateSignedIn /> : <CandidateSignedOut />}
-            <EmployerSignedOut />
+            {isAuthenticated ? <CandidateSignedIn candidateSignOut={handleCandidateSignOut} />
+              : <CandidateSignedOut candidateSignIn={handleCandidateSignIn} />}
+
 
           </Menu.Menu>
         </Container>
       </Menu>
 
     </div>
-  )
+  );
 }
