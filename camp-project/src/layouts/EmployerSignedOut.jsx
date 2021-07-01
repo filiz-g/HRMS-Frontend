@@ -6,9 +6,9 @@ export default function EmployerSignedOut() {
     return (
         <div>
             
-            <Dropdown item text='İşveren'>
+            <Dropdown  item primary text='İşveren'>
                 <Dropdown.Menu>
-                  <Dropdown.Item>Giriş Yap</Dropdown.Item>
+                  <Dropdown.Item >Giriş Yap</Dropdown.Item>
                   <Dropdown.Item>Bilgi Al</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>

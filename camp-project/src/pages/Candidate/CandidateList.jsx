@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Table } from 'semantic-ui-react'
+import { Header, Table } from 'semantic-ui-react'
 import CandidateService from '../../Services/candidateService'
 
-const colors = ["purple"];
+const colors = ["teal"];
 
 export default function CandidateList() {
 
@@ -15,6 +15,11 @@ export default function CandidateList() {
 
     return (
         <div>
+
+            <Header as="h2">
+                <Header.Content size='large '>İş Arayanlar Listesi</Header.Content>
+            </Header>
+
             {colors.map((color) => (
 
                 <Table color={color} key={color}>
@@ -26,7 +31,6 @@ export default function CandidateList() {
                             <Table.HeaderCell>Doğum Tarihi</Table.HeaderCell>
                             <Table.HeaderCell>E-mail</Table.HeaderCell>
                             <Table.HeaderCell>Oluşturma Tarihi</Table.HeaderCell>
-                            <Table.HeaderCell>Aktiflik Durumu</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
 
@@ -39,7 +43,6 @@ export default function CandidateList() {
                                 <Table.Cell>{candidate.dateOfBirth}</Table.Cell>
                                 <Table.Cell>{candidate.email}</Table.Cell>
                                 <Table.Cell>{candidate.createdDate}</Table.Cell>
-                                <Table.Cell>{candidate.isActive}</Table.Cell>
 
 
 

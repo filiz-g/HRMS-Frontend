@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Container, Menu } from 'semantic-ui-react';
 import CandidateSignedOut from './CandidateSignedOut';
 import CandidateSignedIn from './CandidateSignedIn';
+import EmployerSignedOut from './EmployerSignedOut';
+
 
 export default function Navi() {
 
@@ -17,7 +19,8 @@ export default function Navi() {
 
   return (
     <div>
-      <Menu inverted size='medium'>
+
+      <Menu size='medium'>
         <Container>
           <Menu.Item
             name='HRMS'
@@ -27,21 +30,18 @@ export default function Navi() {
             name='Ana sayfa'
 
           />
-          <Menu.Item
-            name=' iş ilanları'
-
-          />
 
           <Menu.Menu position='right'>
 
             {isAuthenticated ? <CandidateSignedIn candidateSignOut={handleCandidateSignOut} />
               : <CandidateSignedOut candidateSignIn={handleCandidateSignIn} />}
 
+             <EmployerSignedOut/>
 
           </Menu.Menu>
         </Container>
       </Menu>
-
+                  
     </div>
   );
 }
