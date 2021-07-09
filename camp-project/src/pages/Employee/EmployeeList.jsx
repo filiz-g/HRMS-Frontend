@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Header, Table } from 'semantic-ui-react'
-import EmployeeService from '../../Services/EmployeeService';
-
+import EmployeeService from '../../Services/employeeService'
 
 const colors = ["teal"];
 

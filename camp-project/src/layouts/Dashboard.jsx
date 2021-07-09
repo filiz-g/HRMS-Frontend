@@ -4,43 +4,27 @@ import EmployerList from '../pages/Employer/EmployerList';
 import EmployeeList from '../pages/Employee/EmployeeList';
 import JobAdvertisementList from '../pages/JobAdvertisement/JobAdvertisementList';
 import { Grid } from "semantic-ui-react";
+import { Route } from 'react-router-dom';
+import JobAdvertisementAdd from '../pages/JobAdvertisement/JobAdvertisementAdd';
 
 export default function Dashboard() {
   return (
     <div>
       <Grid>
         <Grid.Row>
-          <Grid.Column width={4}>
-          </Grid.Column>
-          <Grid.Column width={12}>
-            <CandidateList />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-      <Grid>
-        <Grid.Row>
-          <Grid.Column width={4}>
-          </Grid.Column>
-          <Grid.Column width={12}>
-            <EmployerList />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-      <Grid>
-        <Grid.Row>
-          <Grid.Column width={4}>
-          </Grid.Column>
-          <Grid.Column width={12}>
-            <EmployeeList />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-      <Grid>
-        <Grid.Row>
-          <Grid.Column width={4}>
-          </Grid.Column>
-          <Grid.Column width={12}>
-            <JobAdvertisementList />
+          <Grid.Column >
+            <Route exact path="/candidates" component={CandidateList} />
+            <Route exact path="/employers" component={EmployerList} />
+            <Route exact path="/employers/:id" component={EmployerList} />
+            <Route exact path="/employees" component={EmployeeList} />
+            <Route exact path="/jobadvertisements" component={JobAdvertisementList} />
+            <Route exact path="/jobAdvertisement/add" component={JobAdvertisementAdd} />
+
+
+
+
+
+         
           </Grid.Column>
         </Grid.Row>
       </Grid>
