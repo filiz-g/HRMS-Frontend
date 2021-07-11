@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import { Button, Dropdown, Input, TextArea, Card, Form, Grid, } from "semantic-ui-react";
+import { Button, Dropdown, Input, TextArea, Card, Form, Grid} from "semantic-ui-react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import CityService from "../../Services/cityService";
@@ -101,7 +101,7 @@ export default function JobAdvertisementAdd() {
           <Grid.Column>
             <div>
               <Card fluid>
-                <Card.Content header="İş ilanı" />
+                <Card.Content header="İş İlanı" />
                 <Card.Content>
                   <Form onSubmit={formik.handleSubmit}>
                     <Form.Field>
